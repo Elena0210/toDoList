@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+body {
+    background-image: url('photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+    background-color: rgba(157, 205, 200, 0.6);
+    width:70%;
+    padding: 5px;
+    font-family: 'PT Mono', monospace;
+    text-decoration: none;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+    color: rgb(14, 66, 58);
+    border: none;
+    background-color: rgb(97, 185, 177);
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 10px;
+    width:30%;
+    font-family: 'PT Mono', monospace;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btnTwo {
+    color: white;
+    border: none;
+    background-color: rgb(83, 23, 36);
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 10px;
+    width:30%;
+    font-family: 'PT Mono', monospace;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+    padding: 5px;
+    width:50%;
+    font-family: 'PT Mono', monospace;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+    font-family: 'PT Mono', monospace;
+}
+
+.didIt {
+    background-color: rgba(54, 114, 108, 0.8);
+    color: bisque;
+    text-decoration: none;
+}
+
+.check {
+    display: none;
 }
