@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import image from './to-do.png';
 import check from './checked.png';
 
 export class ToDoList extends Component {
@@ -8,10 +7,10 @@ export class ToDoList extends Component {
         this.state = {
             userInput: "",
             todolist: [],
-            // IMG: {image}
+            showDone: false
         }
     }
-    
+
     onChangeEvent(e) {
         this.setState({userInput: e})
     }
@@ -40,12 +39,9 @@ export class ToDoList extends Component {
     doneIt(event) {
         const li = event.target;
         li.classList.toggle ('didIt');
-        // let pic = this.state.IMG;
-        // pic.style.display = 'block';
-
-        // this.setState({
-        //      IMG: {check}
-        //  })
+        this.setState ({
+            showDone: true
+        })
     }
 
     onFormSubmit(e){
@@ -53,6 +49,8 @@ export class ToDoList extends Component {
     }
 
     render() {
+        const checked = !this.state.showDone ? <img src={check} width="20px" alt="img" className='check'/> : null;
+
         return(
         <div>
             <form onSubmit={this.onFormSubmit}> 
@@ -73,13 +71,11 @@ export class ToDoList extends Component {
                 </div>
 
                 <ul>
-                    {this.state.todolist.map((item, index) => (
-                        <li onClick={this.doneIt} key = {index}> <img src={image} width="15px" alt="img"/>
-                        {item}<img src={check} width="20px" alt="img" className='check'/></li>  
-                    ))}
+                    {this.state.todolist.map((item, index) => (<li onClick={this.doneIt} key={index}>{item}</li>))}
                 </ul>
             </form> 
         </div>
         )
     }
 }
+

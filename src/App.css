@@ -10,7 +10,7 @@ li {
     width:70%;
     padding: 5px;
     font-family: 'PT Mono', monospace;
-    text-decoration: none;
+    list-style-type: none;
     
 }
 
@@ -48,10 +48,5 @@ h1 {
 
 .didIt {
     background-color: rgba(54, 114, 108, 0.8);
-    color: bisque;
-    text-decoration: none;
-}
-
-.check {
-    display: none;
+    color: bisque; 
 }
