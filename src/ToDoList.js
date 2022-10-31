@@ -36,21 +36,20 @@ export class ToDoList extends Component {
         })
     }
 
-    doneIt(event) {
-        const li = event.target;
+    doneIt(e) {
+        const li = e.target;
         li.classList.toggle ('didIt');
-        this.setState ({
-            showDone: true
-        })
-    }
-
+        // const checked = !this.state.showDone ? <img src={check} width="20px" alt="img" className='check'/> : null
+        // this.setState({
+        // showDone: checked
+        // })
+        }
+    
     onFormSubmit(e){
         e.preventDefault();
     }
 
     render() {
-        const checked = !this.state.showDone ? <img src={check} width="20px" alt="img" className='check'/> : null;
-
         return(
         <div>
             <form onSubmit={this.onFormSubmit}> 
@@ -71,7 +70,16 @@ export class ToDoList extends Component {
                 </div>
 
                 <ul>
-                    {this.state.todolist.map((item, index) => (<li onClick={this.doneIt} key={index}>{item}</li>))}
+                    {this.state.todolist.map((item, index) =>
+                    (<li onClick={(e) => this.doneIt(e)} key={index}>
+                        {
+                        this.state.showDone 
+                        ? <img src={check} width="20px" alt="img" className='check'/> 
+                        : null
+                        }
+                    {item}
+                    </li>)
+                    )}
                 </ul>
             </form> 
         </div>
