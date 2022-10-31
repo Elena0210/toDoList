@@ -39,10 +39,9 @@ export class ToDoList extends Component {
     doneIt(e) {
         const li = e.target;
         li.classList.toggle ('didIt');
-        // const checked = !this.state.showDone ? <img src={check} width="20px" alt="img" className='check'/> : null
-        // this.setState({
-        // showDone: checked
-        // })
+        this.setState({
+        showDone: !this.state.showDone
+        })
         }
     
     onFormSubmit(e){
